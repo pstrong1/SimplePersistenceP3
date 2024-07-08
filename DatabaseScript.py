@@ -167,6 +167,30 @@ def print_employee(file_path_to_employee):
             employee = Employee.Employee(employee_id, first_name, last_name, hire_year)
             print(employee)
 
+def search_index():
+    temp = input("Search by last name or ID? - L or last for last, ID for ID: ")
+    match temp.tolower():
+        case "last":
+            lname = True
+        case "l":
+            lname = True
+        case "id":
+            lname = False
+    if lname == True:
+        lastName = input("Enter the last name of the person you want: ")
+        try:
+            print(lastNameHash[lastname])
+        except:
+            print("Employee not found")
+    else if lname == False:
+        identification = input("Enter the ID of the Employee you want: ")
+        try:
+            print(idHash[identification])
+        except:
+            print("Employee not found")
+            
+    
+
 
 quitProgram = False
 
@@ -200,6 +224,8 @@ def main():
             create_employee()
         if command == '6':
             update_employee()
+        if command == '7':
+            
         if command == '7':
             quitProgram = True
 
